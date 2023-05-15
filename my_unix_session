@@ -1,0 +1,731 @@
+Script started on 2023-04-17 18:14:42+05:30 [TERM="xterm-256color" TTY="/dev/tty1" COLUMNS="120" LINES="30"]
+(base) ]0;pulkit@TIGER02765: ~[01;32mpulkit@TIGER02765[00m:[01;34m~[00m$ pwd
+/home/pulkit
+(base) ]0;pulkit@TIGER02765: ~[01;32mpulkit@TIGER02765[00m:[01;34m~[00m$ ls
+Miniconda3-py39_4.12.0-Linux-x86_64.sh                  [0m[01;34mlogs[0m        my_unix_session  [01;34mshell-lesson-data[0m
+Miniconda3-py39_4.12.0-Linux-x86_64.sh:Zone.Identifier  [34;42mminiconda3[0m  [01;34mregression-py[0m    [01;34mtigerml[0m
+(base) ]0;pulkit@TIGER02765: ~[01;32mpulkit@TIGER02765[00m:[01;34m~[00m$ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be 'always' (default
+                               if omitted), 'auto', or 'never'; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=>@|) to entries
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --hyperlink[=WHEN]     hyperlink file names; WHEN can be 'always'
+                               (default if omitted), 'auto', or 'never'
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage;
+                               used only with -s and per directory totals
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is 'ls' and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+                               (overrides QUOTING_STYLE environment variable)
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            with -l, show time as WORD instead of default
+                               modification time: atime or access or use (-u);
+                               ctime or status (-c); also use specified time
+                               as sort key if --sort=time (newest first)
+      --time-style=TIME_STYLE  time/date format with -l; see TIME_STYLE below
+  -t                         sort by modification time, newest first
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time, newest first
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid '\n' with -q or -b
+      --help     display this help and exit
+      --version  output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report ls translation bugs to <https://translationproject.org/team/>
+Full documentation at: <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+(base) ]0;pulkit@TIGER02765: ~[01;32mpulkit@TIGER02765[00m:[01;34m~[00m$ mkdir Assignment1
+(base) ]0;pulkit@TIGER02765: ~[01;32mpulkit@TIGER02765[00m:[01;34m~[00m$ cd Assignment1
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ w[Kpwd
+/home/pulkit/Assignment1
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ mkdir shell
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ cd shee[Kll
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ nano dra[K[K[Ksample.txt[K[K[K[K[K[K[K[K[K[Kdraft.txt
+[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                           draft.txt                                                      [1;119H(B[m[29d(B[0;7m^G(B[m Get Help    (B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut Text    (B[0;7m^J(B[m Justify     (B[0;7m^C(B[m Cur Pos     (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Mark Text[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste Text  (B[0;7m^T(B[m To Spell    (B[0;7m^_(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy Text[28d[2d[39;49m(B[m[?12l[?25h[?25l[1;111H(B[0;7mModified(B[m[2dH[?12l[?25h[?25li[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25lh[?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25l [?12l[?25h[?25ls[?12l[?25h[?25la[?12l[?25h[?25lm[?12l[?25h[?25lp[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25lr[?12l[?25h[?25la[?12l[?25h[?25lf[?12l[?25h[?25lt[?12l[?25h[?25l.[28d[K[2;27H[?12l[?25h[?25l[28d(B[0;7mSave modified buffer?                                                                                                   [29;1H Y(B[m Yes[K[30d(B[0;7m N(B[m No  [30;16H (B[0;7m^C(B[m Cancel[K[28;23H[?12l[?25h[?25l[29d(B[0;7m^G(B[m Get Help[29;31H(B[0;7mM-D(B[m DOS Format[29;61H(B[0;7mM-A(B[m Append[29;91H(B[0;7mM-B(B[m Backup File[30d(B[0;7m^C(B[m Cancel[17G[14X[30;31H(B[0;7mM-M(B[m Mac Format[30;61H(B[0;7mM-P(B[m Prepend[30;91H(B[0;7m^T(B[m To Files[28d(B[0;7mFile Name to Write: draft.txt(B[m[28;30H[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;111H(B[0;7m        (B[m[28;53H(B[0;7m[ Wrote 1 line ](B[m[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ ls
+draft.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ touch draft.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ ls
+draft.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ draft.[K1[K[K[K[K[K[Ktouch new_file.r[Ktxt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ ls
+draft.txt  new_file.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ rm new_file.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ ls
+draft.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ mv draft.txt sample.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ ls
+sample.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/shell[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/shell[00m$ cd ..
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ sudo apt get install git[1P[1P[1P[1P
+[sudo] password for pulkit: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+git is already the newest version (1:2.25.1-1ubuntu3.2).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ git clone https://github.com/pulkitsingh28/LHT-TAMLEP.git
+Cloning into 'LHT-TAMLEP'...
+remote: Enumerating objects: 7, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects:  25% (1/4)[Kremote: Compressing objects:  50% (2/4)[Kremote: Compressing objects:  75% (3/4)[Kremote: Compressing objects: 100% (4/4)[Kremote: Compressing objects: 100% (4/4), done.[K
+remote: Total 7 (delta 0), reused 3 (delta 0), pack-reused 0[K
+Unpacking objects:  14% (1/7)Unpacking objects:  28% (2/7)Unpacking objects:  42% (3/7)Unpacking objects:  57% (4/7)Unpacking objects:  71% (5/7)Unpacking objects:  85% (6/7)Unpacking objects: 100% (7/7)Unpacking objects: 100% (7/7), 1.39 KiB | 29.00 KiB/s, done.
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ ls
+[0m[01;34mLHT-TAMLEP[0m  [01;34mshell[0m
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ cd LHT-TAMLEP
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ nano new [K_text.txt
+[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                          new_text.txt                                                    [1;119H(B[m[29d(B[0;7m^G(B[m Get Help    (B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut Text    (B[0;7m^J(B[m Justify     (B[0;7m^C(B[m Cur Pos     (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Mark Text[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste Text  (B[0;7m^T(B[m To Spell    (B[0;7m^_(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy Text[28d[2d[39;49m(B[m[?12l[?25h[?25l[1;111H(B[0;7mModified(B[m[2dT[?12l[?25h[?25lH[?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lh[?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25le[?12l[?25h[?25lw[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25lt[28d[K[2;19H[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25l [?12l[?25h[?25lg[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25l.[?12l[?25h[?25l[28d(B[0;7mSave modified buffer?                                                                                                   [29;1H Y(B[m Yes[K[30d(B[0;7m N(B[m No  [30;16H (B[0;7m^C(B[m Cancel[K[28;23H[?12l[?25h[?25l[29d(B[0;7m^G(B[m Get Help[29;31H(B[0;7mM-D(B[m DOS Format[29;61H(B[0;7mM-A(B[m Append[29;91H(B[0;7mM-B(B[m Backup File[30d(B[0;7m^C(B[m Cancel[17G[14X[30;31H(B[0;7mM-M(B[m Mac Format[30;61H(B[0;7mM-P(B[m Prepend[30;91H(B[0;7m^T(B[m To Files[28d(B[0;7mFile Name to Write: new_text.txt(B[m[28;33H[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;111H(B[0;7m        (B[m[28;53H(B[0;7m[ Wrote 1 line ](B[m[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mnew_text.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git add .
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git commit -m "new commit"
+[main b266c28] new commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new_text.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git push origin main
+Username for 'https://github.com': pulkitsingh28
+Password for 'https://pulkitsingh28@github.com': 
+Enumerating objects: 4, done.
+Counting objects:  25% (1/4)Counting objects:  50% (2/4)Counting objects:  75% (3/4)Counting objects: 100% (4/4)Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects:  50% (1/2)Compressing objects: 100% (2/2)Compressing objects: 100% (2/2), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 317 bytes | 158.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/pulkitsingh28/LHT-TAMLEP.git
+   c76831d..b266c28  main -> main
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git  chc[Keckout
+Your branch is up to date with 'origin/main'.
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git branch
+[?1h=* [32mmain[m[m
+[K[?1l>(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git branch dev
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git branch
+[?1h=  dev[m[m
+* [32mmain[m[m
+[K[?1l>(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git checkout b[Kdev
+Switched to branch 'dev'
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ nano anoy[Kteh[K[Kher_text.tc[Kxt
+[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                        another_text.txt                                                  [1;119H(B[m[29d(B[0;7m^G(B[m Get Help    (B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut Text    (B[0;7m^J(B[m Justify     (B[0;7m^C(B[m Cur Pos     (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Mark Text[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste Text  (B[0;7m^T(B[m To Spell    (B[0;7m^_(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy Text[28d[2d[39;49m(B[m[?12l[?25h[?25l[1;111H(B[0;7mModified(B[m[2dT[?12l[?25h[?25lH[?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lv[?12l[?25h[?25l [?12l[?25h[?25lb[?12l[?25h[?25lr[?12l[?25h[?25la[?12l[?25h[?25ln[28d[K[2;27H[?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25l[28d(B[0;7mSave modified buffer?                                                                                                   [29;1H Y(B[m Yes[K[30d(B[0;7m N(B[m No  [30;16H (B[0;7m^C(B[m Cancel[K[28;23H[?12l[?25h[?25l[29d(B[0;7m^G(B[m Get Help[29;31H(B[0;7mM-D(B[m DOS Format[29;61H(B[0;7mM-A(B[m Append[29;91H(B[0;7mM-B(B[m Backup File[30d(B[0;7m^C(B[m Cancel[17G[14X[30;31H(B[0;7mM-M(B[m Mac Format[30;61H(B[0;7mM-P(B[m Prepend[30;91H(B[0;7m^T(B[m To Files[28d(B[0;7mFile Name to Write: another_text.txt(B[m[28;37H[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;111H(B[0;7m        (B[m[28;53H(B[0;7m[ Wrote 1 line ](B[m[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git status [K
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31manother_text.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git add.[K .
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git commit -m "dev_commit"
+[dev 027cdcf] dev_commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 another_text.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git push origin dev
+Username for 'https://github.com': pulkitsingh28
+Password for 'https://pulkitsingh28@github.com': 
+Enumerating objects: 4, done.
+Counting objects:  25% (1/4)Counting objects:  50% (2/4)Counting objects:  75% (3/4)Counting objects: 100% (4/4)Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects:  50% (1/2)Compressing objects: 100% (2/2)Compressing objects: 100% (2/2), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 346 bytes | 115.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:[K
+remote:      https://github.com/pulkitsingh28/LHT-TAMLEP/pull/new/dev[K
+remote: 
+To https://github.com/pulkitsingh28/LHT-TAMLEP.git
+ * [new branch]      dev -> dev
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git p[Kstatis[K[Kus
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git pull
+remote: Enumerating objects: 1, done.[K
+remote: Counting objects: 100% (1/1)[Kremote: Counting objects: 100% (1/1), done.[K
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects: 100% (1/1)Unpacking objects: 100% (1/1), 626 bytes | 125.00 KiB/s, done.
+From https://github.com/pulkitsingh28/LHT-TAMLEP
+   b266c28..c2ba95b  main       -> origin/main
+Updating b266c28..c2ba95b
+Fast-forward
+ another_text.txt | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+ create mode 100644 another_text.txt
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git checkout dev
+Switched to branch 'dev'
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git pull
+remote: Enumerating objects: 4, done.[K
+remote: Counting objects:  25% (1/4)[Kremote: Counting objects:  50% (2/4)[Kremote: Counting objects:  75% (3/4)[Kremote: Counting objects: 100% (4/4)[Kremote: Counting objects: 100% (4/4), done.[K
+remote: Compressing objects:  50% (1/2)[Kremote: Compressing objects: 100% (2/2)[Kremote: Compressing objects: 100% (2/2), done.[K
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  33% (1/3)Unpacking objects:  66% (2/3)Unpacking objects: 100% (3/3)Unpacking objects: 100% (3/3), 643 bytes | 37.00 KiB/s, done.
+From https://github.com/pulkitsingh28/LHT-TAMLEP
+   027cdcf..2d3aa2b  dev        -> origin/dev
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git pull remote dev
+fatal: 'remote' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git pull remote dev[1P dev[1P dev[1P dev[1P dev[1P dev[1P dev[1Pdev
+fatal: 'dev' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/LHT-TAMLEP[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/LHT-TAMLEP[00m$ git [K[K[K[Kcd ..
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ mkdir conda
+(base) ]0;pulkit@TIGER02765: ~/Assignment1[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1[00m$ cd conda
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ clear
+[H[2J[3J(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda --version
+conda 4.13.0
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda create --name snowflakes biopython
+Collecting package metadata (current_repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / done
+Solving environment: \ | / - \ | done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.13.0
+  latest version: 23.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/pulkit/miniconda3/envs/snowflakes
+
+  added / updated specs:
+    - biopython
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    biopython-1.78             |  py311h5eee18b_0         2.7 MB
+    ca-certificates-2023.01.10 |       h06a4308_0         120 KB
+    libffi-3.4.2               |       h6a678d5_6         136 KB
+    libuuid-1.41.5             |       h5eee18b_0          27 KB
+    mkl-service-2.4.0          |  py311h5eee18b_0          53 KB
+    mkl_fft-1.3.1              |  py311h30b3d60_0         183 KB
+    mkl_random-1.2.2           |  py311hba01205_0         289 KB
+    ncurses-6.4                |       h6a678d5_0         914 KB
+    numpy-1.23.5               |  py311h75bd12f_0          10 KB
+    numpy-base-1.23.5          |  py311h0ff3221_0         7.0 MB
+    openssl-1.1.1t             |       h7f8727e_0         3.7 MB
+    pip-23.0.1                 |  py311h06a4308_0         2.8 MB
+    python-3.11.2              |       h7a1cb2a_0        32.8 MB
+    readline-8.2               |       h5eee18b_0         357 KB
+    setuptools-66.0.0          |  py311h06a4308_0         1.6 MB
+    sqlite-3.41.2              |       h5eee18b_0         1.2 MB
+    tzdata-2023c               |       h04d1e81_0         116 KB
+    wheel-0.38.4               |  py311h06a4308_0          79 KB
+    xz-5.2.10                  |       h5eee18b_1         429 KB
+    zlib-1.2.13                |       h5eee18b_0         103 KB
+    ------------------------------------------------------------
+                                           Total:        54.4 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu
+  biopython          pkgs/main/linux-64::biopython-1.78-py311h5eee18b_0
+  blas               pkgs/main/linux-64::blas-1.0-mkl
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h7b6447c_0
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2023.01.10-h06a4308_0
+  intel-openmp       pkgs/main/linux-64::intel-openmp-2021.4.0-h06a4308_3561
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.38-h1181459_1
+  libffi             pkgs/main/linux-64::libffi-3.4.2-h6a678d5_6
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1
+  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+  libuuid            pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0
+  mkl                pkgs/main/linux-64::mkl-2021.4.0-h06a4308_640
+  mkl-service        pkgs/main/linux-64::mkl-service-2.4.0-py311h5eee18b_0
+  mkl_fft            pkgs/main/linux-64::mkl_fft-1.3.1-py311h30b3d60_0
+  mkl_random         pkgs/main/linux-64::mkl_random-1.2.2-py311hba01205_0
+  ncurses            pkgs/main/linux-64::ncurses-6.4-h6a678d5_0
+  numpy              pkgs/main/linux-64::numpy-1.23.5-py311h75bd12f_0
+  numpy-base         pkgs/main/linux-64::numpy-base-1.23.5-py311h0ff3221_0
+  openssl            pkgs/main/linux-64::openssl-1.1.1t-h7f8727e_0
+  pip                pkgs/main/linux-64::pip-23.0.1-py311h06a4308_0
+  python             pkgs/main/linux-64::python-3.11.2-h7a1cb2a_0
+  readline           pkgs/main/linux-64::readline-8.2-h5eee18b_0
+  setuptools         pkgs/main/linux-64::setuptools-66.0.0-py311h06a4308_0
+  six                pkgs/main/noarch::six-1.16.0-pyhd3eb1b0_1
+  sqlite             pkgs/main/linux-64::sqlite-3.41.2-h5eee18b_0
+  tk                 pkgs/main/linux-64::tk-8.6.12-h1ccaba5_0
+  tzdata             pkgs/main/noarch::tzdata-2023c-h04d1e81_0
+  wheel              pkgs/main/linux-64::wheel-0.38.4-py311h06a4308_0
+  xz                 pkgs/main/linux-64::xz-5.2.10-h5eee18b_1
+  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+tzdata-2023c         | 116 KB    |                                                                               |   0% tzdata-2023c         | 116 KB    | ##########6                                                                   |  14% tzdata-2023c         | 116 KB    | ###############################9                                              |  42% tzdata-2023c         | 116 KB    | ############################################################################# | 100% tzdata-2023c         | 116 KB    | ############################################################################# | 100% 
+ncurses-6.4          | 914 KB    |                                                                               |   0% ncurses-6.4          | 914 KB    | #3                                                                            |   2% ncurses-6.4          | 914 KB    | ############1                                                                 |  16% ncurses-6.4          | 914 KB    | ################################3                                             |  42% ncurses-6.4          | 914 KB    | ####################################################################7         |  89% ncurses-6.4          | 914 KB    | ############################################################################# | 100% 
+python-3.11.2        | 32.8 MB   |                                                                               |   0% python-3.11.2        | 32.8 MB   |                                                                               |   0% python-3.11.2        | 32.8 MB   | #3                                                                            |   2% python-3.11.2        | 32.8 MB   | ##7                                                                           |   4% python-3.11.2        | 32.8 MB   | ###8                                                                          |   5% python-3.11.2        | 32.8 MB   | ####6                                                                         |   6% python-3.11.2        | 32.8 MB   | #####4                                                                        |   7% python-3.11.2        | 32.8 MB   | ######1                                                                       |   8% python-3.11.2        | 32.8 MB   | ######8                                                                       |   9% python-3.11.2        | 32.8 MB   | #######4                                                                      |  10% python-3.11.2        | 32.8 MB   | ########2                                                                     |  11% python-3.11.2        | 32.8 MB   | ########9                                                                     |  12% python-3.11.2        | 32.8 MB   | #########7                                                                    |  13% python-3.11.2        | 32.8 MB   | ##########5                                                                   |  14% python-3.11.2        | 32.8 MB   | ###########3                                                                  |  15% python-3.11.2        | 32.8 MB   | ############                                                                  |  16% python-3.11.2        | 32.8 MB   | ############6                                                                 |  16% python-3.11.2        | 32.8 MB   | #############1                                                                |  17% python-3.11.2        | 32.8 MB   | #############6                                                                |  18% python-3.11.2        | 32.8 MB   | ##############1                                                               |  18% python-3.11.2        | 32.8 MB   | ##############6                                                               |  19% python-3.11.2        | 32.8 MB   | ###############2                                                              |  20% python-3.11.2        | 32.8 MB   | ################2                                                             |  21% python-3.11.2        | 32.8 MB   | #################5                                                            |  23% python-3.11.2        | 32.8 MB   | ##################4                                                           |  24% python-3.11.2        | 32.8 MB   | ###################2                                                          |  25% python-3.11.2        | 32.8 MB   | ####################                                                          |  26% python-3.11.2        | 32.8 MB   | ####################7                                                         |  27% python-3.11.2        | 32.8 MB   | #####################7                                                        |  28% python-3.11.2        | 32.8 MB   | ######################7                                                       |  30% python-3.11.2        | 32.8 MB   | #######################9                                                      |  31% python-3.11.2        | 32.8 MB   | ########################9                                                     |  32% python-3.11.2        | 32.8 MB   | #########################8                                                    |  34% python-3.11.2        | 32.8 MB   | ##########################8                                                   |  35% python-3.11.2        | 32.8 MB   | ###########################9                                                  |  36% python-3.11.2        | 32.8 MB   | #############################1                                                |  38% python-3.11.2        | 32.8 MB   | ##############################4                                               |  40% python-3.11.2        | 32.8 MB   | ###############################5                                              |  41% python-3.11.2        | 32.8 MB   | ################################6                                             |  42% python-3.11.2        | 32.8 MB   | #################################9                                            |  44% python-3.11.2        | 32.8 MB   | ###################################1                                          |  46% python-3.11.2        | 32.8 MB   | ####################################3                                         |  47% python-3.11.2        | 32.8 MB   | #####################################6                                        |  49% python-3.11.2        | 32.8 MB   | ######################################9                                       |  51% python-3.11.2        | 32.8 MB   | ########################################1                                     |  52% python-3.11.2        | 32.8 MB   | #########################################4                                    |  54% python-3.11.2        | 32.8 MB   | ##########################################6                                   |  55% python-3.11.2        | 32.8 MB   | ###########################################8                                  |  57% python-3.11.2        | 32.8 MB   | ############################################9                                 |  58% python-3.11.2        | 32.8 MB   | ##############################################                                |  60% python-3.11.2        | 32.8 MB   | ###############################################                               |  61% python-3.11.2        | 32.8 MB   | ################################################                              |  62% python-3.11.2        | 32.8 MB   | #################################################1                            |  64% python-3.11.2        | 32.8 MB   | ##################################################1                           |  65% python-3.11.2        | 32.8 MB   | ###################################################1                          |  66% python-3.11.2        | 32.8 MB   | ####################################################                          |  68% python-3.11.2        | 32.8 MB   | #####################################################3                        |  69% python-3.11.2        | 32.8 MB   | ######################################################4                       |  71% python-3.11.2        | 32.8 MB   | #######################################################6                      |  72% python-3.11.2        | 32.8 MB   | #########################################################                     |  74% python-3.11.2        | 32.8 MB   | ##########################################################2                   |  76% python-3.11.2        | 32.8 MB   | ###########################################################3                  |  77% python-3.11.2        | 32.8 MB   | ############################################################4                 |  79% python-3.11.2        | 32.8 MB   | #############################################################4                |  80% python-3.11.2        | 32.8 MB   | ##############################################################5               |  81% python-3.11.2        | 32.8 MB   | ###############################################################5              |  83% python-3.11.2        | 32.8 MB   | ################################################################9             |  84% python-3.11.2        | 32.8 MB   | ##################################################################            |  86% python-3.11.2        | 32.8 MB   | ###################################################################1          |  87% python-3.11.2        | 32.8 MB   | ####################################################################          |  88% python-3.11.2        | 32.8 MB   | #####################################################################2        |  90% python-3.11.2        | 32.8 MB   | ######################################################################1       |  91% python-3.11.2        | 32.8 MB   | #######################################################################1      |  92% python-3.11.2        | 32.8 MB   | ########################################################################2     |  94% python-3.11.2        | 32.8 MB   | #########################################################################2    |  95% python-3.11.2        | 32.8 MB   | ##########################################################################2   |  96% python-3.11.2        | 32.8 MB   | ###########################################################################2  |  98% python-3.11.2        | 32.8 MB   | ############################################################################1 |  99% python-3.11.2        | 32.8 MB   | ############################################################################# | 100% 
+biopython-1.78       | 2.7 MB    |                                                                               |   0% biopython-1.78       | 2.7 MB    | 4                                                                             |   1% biopython-1.78       | 2.7 MB    | ##############9                                                               |  19% biopython-1.78       | 2.7 MB    | #############################8                                                |  39% biopython-1.78       | 2.7 MB    | ########################################2                                     |  52% biopython-1.78       | 2.7 MB    | #######################################################5                      |  72% biopython-1.78       | 2.7 MB    | ####################################################################6         |  89% biopython-1.78       | 2.7 MB    | ############################################################################# | 100% 
+mkl-service-2.4.0    | 53 KB     |                                                                               |   0% mkl-service-2.4.0    | 53 KB     | #######################                                                       |  30% mkl-service-2.4.0    | 53 KB     | ############################################################################# | 100% mkl-service-2.4.0    | 53 KB     | ############################################################################# | 100% 
+numpy-base-1.23.5    | 7.0 MB    |                                                                               |   0% numpy-base-1.23.5    | 7.0 MB    | 1                                                                             |   0% numpy-base-1.23.5    | 7.0 MB    | 6                                                                             |   1% numpy-base-1.23.5    | 7.0 MB    | #3                                                                            |   2% numpy-base-1.23.5    | 7.0 MB    | ##                                                                            |   3% numpy-base-1.23.5    | 7.0 MB    | ##7                                                                           |   4% numpy-base-1.23.5    | 7.0 MB    | ###7                                                                          |   5% numpy-base-1.23.5    | 7.0 MB    | ####8                                                                         |   6% numpy-base-1.23.5    | 7.0 MB    | ######7                                                                       |   9% numpy-base-1.23.5    | 7.0 MB    | ########6                                                                     |  11% numpy-base-1.23.5    | 7.0 MB    | ###########5                                                                  |  15% numpy-base-1.23.5    | 7.0 MB    | #############6                                                                |  18% numpy-base-1.23.5    | 7.0 MB    | ##################4                                                           |  24% numpy-base-1.23.5    | 7.0 MB    | #####################                                                         |  27% numpy-base-1.23.5    | 7.0 MB    | #########################8                                                    |  34% numpy-base-1.23.5    | 7.0 MB    | #############################1                                                |  38% numpy-base-1.23.5    | 7.0 MB    | ##################################6                                           |  45% numpy-base-1.23.5    | 7.0 MB    | #######################################3                                      |  51% numpy-base-1.23.5    | 7.0 MB    | ############################################8                                 |  58% numpy-base-1.23.5    | 7.0 MB    | ###################################################                           |  66% numpy-base-1.23.5    | 7.0 MB    | ############################################################                  |  78% numpy-base-1.23.5    | 7.0 MB    | #################################################################9            |  86% numpy-base-1.23.5    | 7.0 MB    | #########################################################################5    |  95% numpy-base-1.23.5    | 7.0 MB    | ############################################################################# | 100% 
+ca-certificates-2023 | 120 KB    |                                                                               |   0% ca-certificates-2023 | 120 KB    | ##########2                                                                   |  13% ca-certificates-2023 | 120 KB    | ############################################################################# | 100% ca-certificates-2023 | 120 KB    | ############################################################################# | 100% 
+libuuid-1.41.5       | 27 KB     |                                                                               |   0% libuuid-1.41.5       | 27 KB     | ############################################8                                 |  58% libuuid-1.41.5       | 27 KB     | ############################################################################# | 100% libuuid-1.41.5       | 27 KB     | ############################################################################# | 100% 
+xz-5.2.10            | 429 KB    |                                                                               |   0% xz-5.2.10            | 429 KB    | ##8                                                                           |   4% xz-5.2.10            | 429 KB    | ############################################################################# | 100% xz-5.2.10            | 429 KB    | ############################################################################# | 100% 
+numpy-1.23.5         | 10 KB     |                                                                               |   0% numpy-1.23.5         | 10 KB     | ############################################################################# | 100% numpy-1.23.5         | 10 KB     | ############################################################################# | 100% 
+sqlite-3.41.2        | 1.2 MB    |                                                                               |   0% sqlite-3.41.2        | 1.2 MB    | #                                                                             |   1% sqlite-3.41.2        | 1.2 MB    | ###################################9                                          |  47% sqlite-3.41.2        | 1.2 MB    | ############################################################################# | 100% sqlite-3.41.2        | 1.2 MB    | ############################################################################# | 100% 
+mkl_random-1.2.2     | 289 KB    |                                                                               |   0% mkl_random-1.2.2     | 289 KB    | ####2                                                                         |   6% mkl_random-1.2.2     | 289 KB    | ############################################################################# | 100% mkl_random-1.2.2     | 289 KB    | ############################################################################# | 100% 
+pip-23.0.1           | 2.8 MB    |                                                                               |   0% pip-23.0.1           | 2.8 MB    | 4                                                                             |   1% pip-23.0.1           | 2.8 MB    | ############2                                                                 |  16% pip-23.0.1           | 2.8 MB    | ###########################                                                   |  35% pip-23.0.1           | 2.8 MB    | #######################################2                                      |  51% pip-23.0.1           | 2.8 MB    | #################################################6                            |  65% pip-23.0.1           | 2.8 MB    | ############################################################1                 |  78% pip-23.0.1           | 2.8 MB    | #####################################################################2        |  90% pip-23.0.1           | 2.8 MB    | ############################################################################# | 100% 
+setuptools-66.0.0    | 1.6 MB    |                                                                               |   0% setuptools-66.0.0    | 1.6 MB    | 7                                                                             |   1% setuptools-66.0.0    | 1.6 MB    | ######                                                                        |   8% setuptools-66.0.0    | 1.6 MB    | ##########6                                                                   |  14% setuptools-66.0.0    | 1.6 MB    | ################7                                                             |  22% setuptools-66.0.0    | 1.6 MB    | ######################8                                                       |  30% setuptools-66.0.0    | 1.6 MB    | ##################################2                                           |  44% setuptools-66.0.0    | 1.6 MB    | #########################################                                     |  53% setuptools-66.0.0    | 1.6 MB    | #########################################################8                    |  75% setuptools-66.0.0    | 1.6 MB    | ###################################################################7          |  88% setuptools-66.0.0    | 1.6 MB    | ############################################################################8 | 100% setuptools-66.0.0    | 1.6 MB    | ############################################################################# | 100% 
+mkl_fft-1.3.1        | 183 KB    |                                                                               |   0% mkl_fft-1.3.1        | 183 KB    | ######7                                                                       |   9% mkl_fft-1.3.1        | 183 KB    | ############################################################################# | 100% mkl_fft-1.3.1        | 183 KB    | ############################################################################# | 100% 
+openssl-1.1.1t       | 3.7 MB    |                                                                               |   0% openssl-1.1.1t       | 3.7 MB    | 3                                                                             |   0% openssl-1.1.1t       | 3.7 MB    | ###8                                                                          |   5% openssl-1.1.1t       | 3.7 MB    | ############8                                                                 |  17% openssl-1.1.1t       | 3.7 MB    | ##################                                                            |  23% openssl-1.1.1t       | 3.7 MB    | ########################7                                                     |  32% openssl-1.1.1t       | 3.7 MB    | ###############################5                                              |  41% openssl-1.1.1t       | 3.7 MB    | ######################################6                                       |  50% openssl-1.1.1t       | 3.7 MB    | #############################################                                 |  59% openssl-1.1.1t       | 3.7 MB    | ###################################################1                          |  66% openssl-1.1.1t       | 3.7 MB    | ########################################################9                     |  74% openssl-1.1.1t       | 3.7 MB    | ################################################################3             |  84% openssl-1.1.1t       | 3.7 MB    | ######################################################################8       |  92% openssl-1.1.1t       | 3.7 MB    | ############################################################################# | 100% openssl-1.1.1t       | 3.7 MB    | ############################################################################# | 100% 
+readline-8.2         | 357 KB    |                                                                               |   0% readline-8.2         | 357 KB    | ###4                                                                          |   4% readline-8.2         | 357 KB    | ##########################################################7                   |  76% readline-8.2         | 357 KB    | ############################################################################# | 100% 
+wheel-0.38.4         | 79 KB     |                                                                               |   0% wheel-0.38.4         | 79 KB     | ###############5                                                              |  20% wheel-0.38.4         | 79 KB     | ############################################################################# | 100% wheel-0.38.4         | 79 KB     | ############################################################################# | 100% 
+libffi-3.4.2         | 136 KB    |                                                                               |   0% libffi-3.4.2         | 136 KB    | #########                                                                     |  12% libffi-3.4.2         | 136 KB    | ############################################################################# | 100% libffi-3.4.2         | 136 KB    | ############################################################################# | 100% 
+zlib-1.2.13          | 103 KB    |                                                                               |   0% zlib-1.2.13          | 103 KB    | ###########9                                                                  |  15% zlib-1.2.13          | 103 KB    | ############################################################################# | 100% zlib-1.2.13          | 103 KB    | ############################################################################# | 100% 
+Preparing transaction: - \ | / - \ | done
+Verifying transaction: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
+Executing transaction: / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
+#
+# To activate this environment, use
+#
+#     $ conda activate snowflakes
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda --info
+usage: conda [-h] [-V] command ...
+conda: error: the following arguments are required: command
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda info --envs
+# conda environments:
+#
+base                  *  /home/pulkit/miniconda3
+snowflakes               /home/pulkit/miniconda3/envs/snowflakes
+ta-lib-dev               /home/pulkit/miniconda3/envs/ta-lib-dev
+ta-tigerml               /home/pulkit/miniconda3/envs/ta-tigerml
+
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ pyh[Kthon --verso=[K[Kion
+Python 3.9.12
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda install beau[K[K[K[Knumpy
+Collecting package metadata (current_repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
+Solving environment: - \ | / - \ done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.13.0
+  latest version: 23.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/pulkit/miniconda3
+
+  added / updated specs:
+    - numpy
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2022.12.7          |   py39h06a4308_0         150 KB
+    mkl_random-1.2.2           |   py39h51133e4_0         309 KB
+    numpy-1.23.5               |   py39h14f4228_0          10 KB
+    numpy-base-1.23.5          |   py39h31eccc5_0         6.7 MB
+    ------------------------------------------------------------
+                                           Total:         7.1 MB
+
+The following NEW packages will be INSTALLED:
+
+  blas               pkgs/main/linux-64::blas-1.0-mkl
+  intel-openmp       pkgs/main/linux-64::intel-openmp-2021.4.0-h06a4308_3561
+  mkl                pkgs/main/linux-64::mkl-2021.4.0-h06a4308_640
+  mkl-service        pkgs/main/linux-64::mkl-service-2.4.0-py39h7f8727e_0
+  mkl_fft            pkgs/main/linux-64::mkl_fft-1.3.1-py39hd3c417c_0
+  mkl_random         pkgs/main/linux-64::mkl_random-1.2.2-py39h51133e4_0
+  numpy              pkgs/main/linux-64::numpy-1.23.5-py39h14f4228_0
+  numpy-base         pkgs/main/linux-64::numpy-base-1.23.5-py39h31eccc5_0
+  six                pkgs/main/noarch::six-1.16.0-pyhd3eb1b0_1
+
+The following packages will be UPDATED:
+
+  ca-certificates                      2022.4.26-h06a4308_0 --> 2023.01.10-h06a4308_0
+  certifi                          2022.6.15-py39h06a4308_0 --> 2022.12.7-py39h06a4308_0
+  openssl                                 1.1.1q-h7f8727e_0 --> 1.1.1t-h7f8727e_0
+
+
+Proceed ([y]/n)? n
+
+
+CondaSystemExit: Exiting.
+
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda installbeautifulsoup4
+
+CommandNotFoundError: No command 'conda installbeautifulsoup4'.
+
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda installbeautifulsoup4[C beautifulsoup4
+Collecting package metadata (current_repodata.json): - \ | / done
+Solving environment: \ | / done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.13.0
+  latest version: 23.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/pulkit/miniconda3
+
+  added / updated specs:
+    - beautifulsoup4
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    beautifulsoup4-4.12.2      |   py39h06a4308_0         209 KB
+    certifi-2022.12.7          |   py39h06a4308_0         150 KB
+    soupsieve-2.4              |   py39h06a4308_0          69 KB
+    ------------------------------------------------------------
+                                           Total:         428 KB
+
+The following NEW packages will be INSTALLED:
+
+  beautifulsoup4     pkgs/main/linux-64::beautifulsoup4-4.12.2-py39h06a4308_0
+  soupsieve          pkgs/main/linux-64::soupsieve-2.4-py39h06a4308_0
+
+The following packages will be UPDATED:
+
+  ca-certificates                      2022.4.26-h06a4308_0 --> 2023.01.10-h06a4308_0
+  certifi                          2022.6.15-py39h06a4308_0 --> 2022.12.7-py39h06a4308_0
+  openssl                                 1.1.1q-h7f8727e_0 --> 1.1.1t-h7f8727e_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+certifi-2022.12.7    | 150 KB    |                                                                               |   0% certifi-2022.12.7    | 150 KB    | ########2                                                                     |  11% certifi-2022.12.7    | 150 KB    | #################################################3                            |  64% certifi-2022.12.7    | 150 KB    | ############################################################################# | 100% certifi-2022.12.7    | 150 KB    | ############################################################################# | 100% 
+soupsieve-2.4        | 69 KB     |                                                                               |   0% soupsieve-2.4        | 69 KB     | #################8                                                            |  23% soupsieve-2.4        | 69 KB     | ############################################################################# | 100% soupsieve-2.4        | 69 KB     | ############################################################################# | 100% 
+beautifulsoup4-4.12. | 209 KB    |                                                                               |   0% beautifulsoup4-4.12. | 209 KB    | #####9                                                                        |   8% beautifulsoup4-4.12. | 209 KB    | ###########8                                                                  |  15% beautifulsoup4-4.12. | 209 KB    | ###################################4                                          |  46% beautifulsoup4-4.12. | 209 KB    | #####################################################1                        |  69% beautifulsoup4-4.12. | 209 KB    | ############################################################################# | 100% beautifulsoup4-4.12. | 209 KB    | ############################################################################# | 100% 
+Preparing transaction: \ done
+Verifying transaction: / - \ | / done
+Executing transaction: \ | / - \ | / done
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ conda list
+# packages in environment at /home/pulkit/miniconda3:
+#
+# Name                    Version                   Build  Channel
+_libgcc_mutex             0.1                        main  
+_openmp_mutex             5.1                       1_gnu  
+altair                    4.2.0                    pypi_0    pypi
+argon2-cffi               21.3.0                   pypi_0    pypi
+argon2-cffi-bindings      21.2.0                   pypi_0    pypi
+asttokens                 2.0.5                    pypi_0    pypi
+attrs                     21.4.0                   pypi_0    pypi
+backcall                  0.2.0                    pypi_0    pypi
+beautifulsoup4            4.11.1                   pypi_0    pypi
+bleach                    5.0.1                    pypi_0    pypi
+bokeh                     2.4.3                    pypi_0    pypi
+brotlipy                  0.7.0           py39h27cfd23_1003  
+ca-certificates           2023.01.10           h06a4308_0  
+category-encoders         2.4.1                    pypi_0    pypi
+certifi                   2022.12.7        py39h06a4308_0  
+cffi                      1.15.0           py39hd667e15_1  
+chardet                   3.0.4                    pypi_0    pypi
+charset-normalizer        2.0.4              pyhd3eb1b0_0  
+click                     8.1.3                    pypi_0    pypi
+cloudpickle               2.1.0                    pypi_0    pypi
+colorama                  0.4.5                    pypi_0    pypi
+colorcet                  3.0.0                    pypi_0    pypi
+conda                     4.13.0           py39h06a4308_0  
+conda-package-handling    1.8.1            py39h7f8727e_0  
+configparser              5.2.0                    pypi_0    pypi
+crayons                   0.4.0                    pypi_0    pypi
+cryptography              37.0.1           py39h9ce1e76_0  
+cycler                    0.11.0                   pypi_0    pypi
+dask                      2022.7.0                 pypi_0    pypi
+datashader                0.13.0                   pypi_0    pypi
+datashape                 0.5.2                    pypi_0    pypi
+debugpy                   1.6.2                    pypi_0    pypi
+decorator                 5.1.1                    pypi_0    pypi
+defusedxml                0.7.1                    pypi_0    pypi
+distributed               2022.7.0                 pypi_0    pypi
+entrypoints               0.4                      pypi_0    pypi
+executing                 0.8.3                    pypi_0    pypi
+fastjsonschema            2.15.3                   pypi_0    pypi
+fonttools                 4.34.4                   pypi_0    pypi
+fsspec                    0.7.4                    pypi_0    pypi
+future                    0.16.0                   pypi_0    pypi
+great-expectations        0.13.4                   pypi_0    pypi
+heapdict                  1.0.1                    pypi_0    pypi
+holoviews                 1.14.9                   pypi_0    pypi
+hvplot                    0.8.0                    pypi_0    pypi
+idna                      2.10                     pypi_0    pypi
+importlib-metadata        4.12.0                   pypi_0    pypi
+invoke                    1.7.1                    pypi_0    pypi
+ipykernel                 6.15.1                   pypi_0    pypi
+ipython                   8.3.0                    pypi_0    pypi
+ipython-genutils          0.2.0                    pypi_0    pypi
+ipywidgets                7.7.1                    pypi_0    pypi
+jedi                      0.18.1                   pypi_0    pypi
+jinja2                    3.0.3                    pypi_0    pypi
+joblib                    1.1.0                    pypi_0    pypi
+jsonpatch                 1.32                     pypi_0    pypi
+jsonpointer               2.3                      pypi_0    pypi
+jsonschema                4.7.2                    pypi_0    pypi
+jupyter                   1.0.0                    pypi_0    pypi
+jupyter-client            7.3.4                    pypi_0    pypi
+jupyter-console           6.4.4                    pypi_0    pypi
+jupyter-core              4.11.1                   pypi_0    pypi
+jupyterlab-pygments       0.2.2                    pypi_0    pypi
+jupyterlab-widgets        1.1.1                    pypi_0    pypi
+kiwisolver                1.4.3                    pypi_0    pypi
+ld_impl_linux-64          2.38                 h1181459_1  
+libffi                    3.3                  he6710b0_2  
+libgcc-ng                 11.2.0               h1234567_1  
+libgomp                   11.2.0               h1234567_1  
+libstdcxx-ng              11.2.0               h1234567_1  
+llvmlite                  0.38.1                   pypi_0    pypi
+locket                    1.0.0                    pypi_0    pypi
+luminol                   0.4                      pypi_0    pypi
+lxml                      4.6.1                    pypi_0    pypi
+markdown                  3.3.7                    pypi_0    pypi
+markupsafe                2.1.1                    pypi_0    pypi
+matplotlib                3.5.1                    pypi_0    pypi
+matplotlib-inline         0.1.3                    pypi_0    pypi
+mistune                   0.8.4                    pypi_0    pypi
+msgpack                   1.0.4                    pypi_0    pypi
+multipledispatch          0.6.0                    pypi_0    pypi
+natsort                   8.1.0                    pypi_0    pypi
+nbclient                  0.6.6                    pypi_0    pypi
+nbconvert                 6.5.0                    pypi_0    pypi
+nbformat                  5.4.0                    pypi_0    pypi
+ncurses                   6.3                  h5eee18b_3  
+nest-asyncio              1.5.5                    pypi_0    pypi
+notebook                  6.4.12                   pypi_0    pypi
+numba                     0.55.2                   pypi_0    pypi
+numpy                     1.21.6                   pypi_0    pypi
+openssl                   1.1.1t               h7f8727e_0  
+packaging                 21.3                     pypi_0    pypi
+pandas                    1.4.2                    pypi_0    pypi
+pandas-flavor             0.2.0                    pypi_0    pypi
+pandocfilters             1.5.0                    pypi_0    pypi
+panel                     0.13.1                   pypi_0    pypi
+param                     1.12.1                   pypi_0    pypi
+parso                     0.8.3                    pypi_0    pypi
+partd                     1.2.0                    pypi_0    pypi
+patsy                     0.5.2                    pypi_0    pypi
+pexpect                   4.8.0                    pypi_0    pypi
+pickleshare               0.7.5                    pypi_0    pypi
+pillow                    9.2.0                    pypi_0    pypi
+pip                       21.2.4                   pypi_0    pypi
+prometheus-client         0.14.1                   pypi_0    pypi
+prompt-toolkit            3.0.30                   pypi_0    pypi
+psutil                    5.9.1                    pypi_0    pypi
+ptyprocess                0.7.0                    pypi_0    pypi
+pure-eval                 0.2.2                    pypi_0    pypi
+pyarrow                   4.0.1                    pypi_0    pypi
+pycosat                   0.6.3            py39h27cfd23_0  
+pycparser                 2.21               pyhd3eb1b0_0  
+pyct                      0.4.8                    pypi_0    pypi
+pygments                  2.12.0                   pypi_0    pypi
+pyjanitor                 0.20.9                   pypi_0    pypi
+pyopenssl                 22.0.0             pyhd3eb1b0_0  
+pyparsing                 2.4.7                    pypi_0    pypi
+pyrsistent                0.18.1                   pypi_0    pypi
+pysocks                   1.7.1            py39h06a4308_0  
+python                    3.9.12               h12debd9_0  
+python-dateutil           2.8.2                    pypi_0    pypi
+python-pptx               0.6.21                   pypi_0    pypi
+python-slugify            3.0.4                    pypi_0    pypi
+pytz                      2022.1                   pypi_0    pypi
+pytz-deprecation-shim     0.1.0.post0              pypi_0    pypi
+pyviz-comms               2.2.0                    pypi_0    pypi
+pyyaml                    6.0                      pypi_0    pypi
+pyzmq                     23.2.0                   pypi_0    pypi
+qtconsole                 5.3.1                    pypi_0    pypi
+qtpy                      2.1.0                    pypi_0    pypi
+readline                  8.1.2                h7f8727e_1  
+requests                  2.23.0                   pypi_0    pypi
+ruamel-yaml               0.17.21                  pypi_0    pypi
+ruamel-yaml-clib          0.2.6                    pypi_0    pypi
+ruamel_yaml               0.15.100         py39h27cfd23_0  
+ruptures                  1.1.6                    pypi_0    pypi
+scikit-learn              1.0.2                    pypi_0    pypi
+scipy                     1.8.1                    pypi_0    pypi
+seaborn                   0.11.2                   pypi_0    pypi
+selenium                  3.141.0                  pypi_0    pypi
+send2trash                1.8.0                    pypi_0    pypi
+setuptools                61.2.0           py39h06a4308_0  
+six                       1.16.0                   pypi_0    pypi
+sortedcontainers          2.4.0                    pypi_0    pypi
+soupsieve                 2.3.2.post1              pypi_0    pypi
+sqlite                    3.38.5               hc218d9a_0  
+stack-data                0.3.0                    pypi_0    pypi
+statsmodels               0.13.2                   pypi_0    pypi
+tblib                     1.7.0                    pypi_0    pypi
+termcolor                 1.1.0                    pypi_0    pypi
+terminado                 0.15.0                   pypi_0    pypi
+text-unidecode            1.3                      pypi_0    pypi
+threadpoolctl             3.1.0                    pypi_0    pypi
+tigerml-core              0.4.0                    pypi_0    pypi
+tigerml-eda               0.4.0                    pypi_0    pypi
+tigerml-viz               0.4.0                    pypi_0    pypi
+tinycss2                  1.1.1                    pypi_0    pypi
+tk                        8.6.12               h1ccaba5_0  
+toolz                     0.12.0                   pypi_0    pypi
+tornado                   6.1                      pypi_0    pypi
+tqdm                      4.64.0           py39h06a4308_0  
+traitlets                 5.3.0                    pypi_0    pypi
+typing-extensions         4.3.0                    pypi_0    pypi
+tzdata                    2022.1                   pypi_0    pypi
+tzlocal                   4.2                      pypi_0    pypi
+urllib3                   1.25.11                  pypi_0    pypi
+wcwidth                   0.2.5                    pypi_0    pypi
+webdriver-manager         3.4.1                    pypi_0    pypi
+webencodings              0.5.1                    pypi_0    pypi
+wheel                     0.37.1             pyhd3eb1b0_0  
+widgetsnbextension        3.6.1                    pypi_0    pypi
+xarray                    2022.3.0                 pypi_0    pypi
+xgboost                   1.5.1                    pypi_0    pypi
+xlrd                      2.0.1                    pypi_0    pypi
+xlsxwriter                3.0.3                    pypi_0    pypi
+xz                        5.2.5                h7f8727e_1  
+yaml                      0.2.5                h7b6447c_0  
+zict                      2.2.0                    pypi_0    pypi
+zipp                      3.8.1                    pypi_0    pypi
+zlib                      1.2.12               h7f8727e_2  
+(base) ]0;pulkit@TIGER02765: ~/Assignment1/conda[01;32mpulkit@TIGER02765[00m:[01;34m~/Assignment1/conda[00m$ exit
+exit
+
+Script done on 2023-04-17 18:46:46+05:30 [COMMAND_EXIT_CODE="0"]
